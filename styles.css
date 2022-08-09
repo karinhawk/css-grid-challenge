@@ -5,10 +5,10 @@
     box-sizing: border-box;
 }
 
-body {
+#container {
     display: grid;
-    height: 600px;
-    width: 1200px;
+    height: 100vh;
+    width: auto;
     grid-template-columns: 20% 20% 20% 20%;
     grid-template-rows: repeat (10, 1fr);
 
@@ -17,7 +17,7 @@ body {
 header {
     background-color: black;
     color: white;
-    margin: 7px;
+    margin: 5px;
     grid-column: 1/5;
     grid-row: 1/2;
     padding-top: 30px;
@@ -28,7 +28,7 @@ header {
 aside {
     background-color: rgb(79, 152, 110);
     color: white;
-    margin: 7px;
+    margin: 5px;
     grid-column: 1/2;
     grid-row: 2/7;
     padding-top: 200px;
@@ -38,7 +38,7 @@ aside {
 nav {
     background-color: rgb(34, 77, 52);
     color: white;
-    margin: 7px;
+    margin: 5px;
     grid-column: 2/5;
     grid-row: 2/3;
     padding-top: 25px;
@@ -48,7 +48,7 @@ nav {
 main {
     background-color: rgb(49, 118, 97);
     color: white;
-    margin: 7px;
+    margin: 5px;
     grid-column: 2/5;
     grid-row: 3/7;
     padding-top: 150px;
@@ -58,7 +58,7 @@ main {
 footer {
     background-color: black;
     color: white;
-    margin: 7px;
+    margin: 5px;
     grid-column: 1/5;
     grid-row: 7/8;
     padding-top: 25px;
@@ -66,25 +66,33 @@ footer {
 }
 
 
-@media screen and (max-width: 720px) {
-    body {
-        grid-template-columns: 1fr;
-    }
-
-        .header {
-            order: 0;
+@media only screen and (max-width: 720px) {
+  
+        header {
+            height: 10vh;
+            grid-column: 1/5;
+            width: 100%;
+            text-align: center;
         }
-
-        .nav {
-            order: 1;
+        aside {
+            display: none;
         }
-
-        .main {
-            order: 2;
+        nav {
+            height: 10vh;
+            width: 100%;
+            grid-column: 1/5;
+            text-align: center;
         }
-
-        .footer {
-            order: 3;
+        main {
+            height: 70vh;
+            width: 100%;
+            grid-column: 1/5;
+            text-align: center;
         }
-    }
+        footer {
+            height: 10vh;
+            width: 100%;
+            grid-column: 1/5;
+            text-align: center;
+        }
 }
